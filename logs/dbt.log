@@ -60,3 +60,19 @@ Runtime Error
 [0m19:28:09.053473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73398f5a37a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73398a99f770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73398b033cb0>]}
 [0m19:28:09.054379 [debug] [MainThread]: Flushing usage events
 [0m19:28:10.624497 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:43:30.706944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aaf76f6e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aaf87e2240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aaf727d340>]}
+
+
+============================== 19:43:30.709421 | 3392d006-4a1e-44c5-9307-abca6e4c02a5 ==============================
+[0m19:43:30.709421 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:43:30.709899 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'version_check': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'warn_error': 'None', 'debug': 'False', 'printer_width': '80', 'log_path': 'logs', 'write_json': 'True', 'profiles_dir': '/home/cliffe/.dbt', 'empty': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'invocation_command': 'dbt test -s fct_sales.yml', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m19:43:30.710299 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/cliffe/bandcamp-data-cleaning/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:43:30.711167 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.058221534, "process_in_blocks": "0", "process_kernel_time": 0.095902, "process_mem_max_rss": "103908", "process_out_blocks": "8", "process_user_time": 1.202782}
+[0m19:43:30.711786 [debug] [MainThread]: Command `dbt test` failed at 19:43:30.711653 after 0.06 seconds
+[0m19:43:30.712335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aafbf077a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aaf7998320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70aaf799b620>]}
+[0m19:43:30.712854 [debug] [MainThread]: Flushing usage events
+[0m19:43:32.138153 [debug] [MainThread]: An error was encountered while trying to flush usage events

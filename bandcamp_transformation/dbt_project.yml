@@ -33,9 +33,11 @@ models:
   bandcamp_transformation:
     staging:
       +schema: staging
+      +materialized: view
 
     marts:
       +schema: marts
+      +materialized: table
   #  example:
    #   +materialized: view
 

@@ -1,7 +1,3 @@
-{{ config(
-    materialized='table'
-) }}
-
 WITH staging AS (
     SELECT * FROM {{ ref('stg_bandcamp_sales') }}
 ),

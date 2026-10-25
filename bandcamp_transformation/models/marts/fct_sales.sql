@@ -1,5 +1,16 @@
+{{ config(
+    materialized='incremental',
+    unique_key='sale_key'
+    )
+}}
+
 WITH staging AS (
     SELECT * FROM {{ ref('stg_bandcamp_sales') }}
+    -- Compare incoming date against max date in the target table
+    {% if is_incremental() %}
+    WHERE utc_date >= (SELECT dateadd(day, -3, max(sale_date) FROM {{ this }})
+    {% endif %}
+
 ),
 
 fact_sales AS (
@@ -20,3 +31,4 @@ fact_sales AS (
 )
 
 SELECT * FROM fact_sales
+

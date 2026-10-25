@@ -80,6 +80,9 @@ The `build` command automatically seeds the raw data:
 
 ![seeding](./docs/seed.png)
 
+Builds the snapshots:
+![snapshots](./docs/snapshots.png)
+
 Runs the staging models:
 
 ![staging](./docs/staging_run.png)

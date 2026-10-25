@@ -14,13 +14,15 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_artist')
-              field: artist_key
+              arguments:
+                to: ref('dim_artist')
+                field: artist_key
 
       - name: item_key
         description: "Foreign key connecting to dim_item."
         tests:
           - not_null
           - relationships:
-              to: ref('dim_item')
-              field: item_key
+              arguments:
+                to: ref('dim_item')
+                field: item_key

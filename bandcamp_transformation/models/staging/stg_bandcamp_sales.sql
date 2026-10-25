@@ -33,7 +33,14 @@ cleaned_sales AS (
         -- Convert utc_date to timestamp
         to_timestamp(utc_date::NUMERIC) as utc_date
     FROM raw_sales
+),
+
+-- Use row number to rank sales with their sales_key based on the latest_date
+deduplicated_sales AS (
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY sale_key ORDER BY utc_date DESC) as rn
+    FROM cleaned_sales
 )
 
 -- Deduplicate
-SELECT DISTINCT * FROM cleaned_sales
+SELECT * FROM deduplicated  _sales WHERE rn=1;

@@ -3,4 +3,4 @@ SELECT
     id, 
     amount_over_usd
 FROM {{ ref('stg_bandcamp_sales') }}
-WHERE amount_over_usd < OR amount_over_usd IS NULL
+WHERE amount_over_usd < 0 OR amount_over_usd IS NULL
